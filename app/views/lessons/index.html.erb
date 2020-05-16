@@ -1,4 +1,9 @@
-<div class="col-xs-8  col-md-offset-2">
+<div class="col-xs-3">
+<ul class="note">
+<li><a>情報コミュニケーション学部</a></li>
+</ul>
+</div>
+<div class="col-xs-7">
 <div class="topic">
 <h1> Meiji</h1>
 <p>明治大学授業評価掲示板</p>
@@ -15,11 +20,16 @@
     <% @lessons.each do |lesson|%>
     <div class="box10">
     <p><%=lesson.created_at.to_s(:datetime_jp)%></p>
-    <p>教授名</p><p><%= link_to lesson.teacher_name,lesson_path(lesson.id)%></p>
-    <p>授業名</p>
-    <p><%= link_to lesson.title, lesson_path(lesson.id)%></p>
-    <p>授業内容</p>
-    <p><%=lesson.body%></p>
+    <h4>教授名</h4>
+    <p class="t"><%= link_to lesson.teacher_name,lesson_path(lesson.id)%></p>
+    <p>-----------------------------------------------------------------------------------------------------</p>
+    <h4>授業名</h4>
+    <p class="t"><%= link_to lesson.title, lesson_path(lesson.id)%></p>
+    <p>-----------------------------------------------------------------------------------------------------</p>
+    <h4>授業評価</h4>
+    <div class="box14">
+    <span><%=lesson.body%></span>
+    </div>
     </div>
     <%end%>
 

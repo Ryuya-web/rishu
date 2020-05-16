@@ -16,13 +16,14 @@
 }
 h1{
     font-family: 'Tangerine', cursive;
-    font-size:80px;
+    font-size:100px;
     text-align:center;
  }
 .topic p{
     text-align:center;
     font-family: "M PLUS Rounded 1c";
     font-size:30px;
+    margin-top:30px;
 }
 .ribbon5 {
     margin-top:20px;
@@ -86,7 +87,7 @@ h1{
     border-right-color: transparent;/*山形に切り抜き*/
   }
   .ribon{
-      margin-left:250px;
+      margin-left:280px;
       margin-top:50px;
   }
   .ribbon9 h3 {
@@ -191,4 +192,98 @@ h1{
 .box14 h3 {
   margin: 0; 
   padding: 0;
+}
+.box22{
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  background: white;
+  border-left: solid 6px #5bb7ae;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+}
+.box22 p {
+  margin: 0; 
+  padding: 0;
+}
+.box26{
+  position: relative;
+  background: white;
+  box-shadow: 0px 0px 0px 5px #fff0cd;
+  border: dashed 2px black;
+  padding: 0.2em 0.5em;
+  color: #454545;
+}
+.box26:after{
+  position: absolute;
+  content: '';
+  right: -7px;
+  top: -7px;
+  border-width: 0 15px 15px 0;
+  border-style: solid;
+  border-color: #ffdb88 #fff #ffdb88;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+.box26 p {
+  margin: 0; 
+  padding: 0;
+}
+.box14{
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+  background: white;
+  box-shadow: 0px 0px 0px 5px #e4fcff;
+  border: dashed 2px #D8BfD8;
+}
+.box14 p {
+  margin: 0; 
+  padding: 0;
+}
+span {
+  border-bottom: 1px dashed #CCCCCC;
+  font-size:18px;
+}
+
+.note {
+  margin: 0;
+  border: solid 2px #999; /*外枠の設定*/
+  padding: 0 2em;
+  position: relative;
+  background-color:white;
+}
+
+/*罫線の設定*/
+.note li {
+  border-bottom: dashed 1px #ccc; /*罫線の設定*/
+  line-height: 1.5;
+  padding: 0.5em 0 0.5em 1.5em;
+  margin:0;
+  list-style-type:none;
+}
+
+.note li:last-of-type {
+  border-bottom: none;
+}
+
+/*ドットの設定*/
+.note::before {
+  content: "";
+  position: absolute;
+  border-right: dotted 10px #ddd; /*ドットの設定*/
+  height:90%;
+  top:0.5em;
+  left:0.5em;
+}
+
+/*チェックアイコンの設定*/
+.note li::after {
+  font-family: FontAwesome;
+  content: "\f00c"; /*アイコンの設定*/
+  color: #fdbf64; /*色の設定*/
+  position: absolute;
+  left : 2em;
+}
+.box10 a{
+  font-size:20px;
+}
+.box10 h4{
+  font-size:15px;
 }

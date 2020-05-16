@@ -26,7 +26,7 @@ class LessonsController < ApplicationController
         @lesson = Lesson.find params[:id]
         @like = Like.new
         @lessons = Lesson.where(title:@lesson.title)
-        @teachers = Teacher.where(id:@lessons.pluck(:teacher_id))
+        @teachers = Lesson.where(teacher_id:@lessons.pluck(:teacher_id))
     end
     private
     def lesson_params
