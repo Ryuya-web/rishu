@@ -20,7 +20,10 @@ class LessonsController < ApplicationController
     end
     def search
         @lessons = Lesson.search(params[:search])
-        @teachers = Teacher.where(id:@lessons.pluck(:teacher_id))
+        @all_ranks = Lesson.find(Like.group(:lesson_id).order('count(lesson_id) desc').limit(50).distinct.pluck(:lesson_id))
+    end
+    def searches
+        @lessons = Lesson.searches(params[:search])
         @all_ranks = Lesson.find(Like.group(:lesson_id).order('count(lesson_id) desc').limit(50).distinct.pluck(:lesson_id))
     end
     def show
@@ -28,6 +31,7 @@ class LessonsController < ApplicationController
         @like = Like.new
         @lessons = Lesson.where(title:@lesson.title)
         @teachers = Lesson.where(teacher_id:@lessons.pluck(:teacher_id))
+        @all_ranks = Lesson.find(Like.group(:lesson_id).order('count(lesson_id) desc').limit(50).distinct.pluck(:lesson_id))
     end
     private
     def lesson_params

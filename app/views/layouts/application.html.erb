@@ -20,8 +20,9 @@
   <nav>
   <ul class="nav navbar-nav navbar-right">   
     <% if user_signed_in? %>
-        <li><%= link_to 'Home', homes_index_path, class: 'glyphicon glyphicon-home home' %></li>
-        <li><%= link_to '授業検索', search_path, class: 'glyphicon glyphicon-user users' %></li>
+        <li><%= link_to 'Home', lessons_path, class: 'glyphicon glyphicon-home home' %></li>
+        <li><%= link_to '教授検索', searches_path, class: 'glyphicon glyphicon-user users' %></li>
+        <li><%= link_to '授業検索', search_path, class: 'glyphicon glyphicon-search search' %></li>
         <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
     <% else %>
         <li><%= link_to 'home', root_path, class: 'glyphicon glyphicon-home home' %></li>

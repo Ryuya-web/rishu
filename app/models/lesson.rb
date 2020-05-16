@@ -10,4 +10,11 @@ class Lesson < ApplicationRecord
           Lesson.all
         end
     end
+    def self.searches(search)
+      if search
+         Lesson.where(['teacher_name LIKE ?', "%#{search}%"])
+      else
+        Lesson.all
+      end
+  end
 end
