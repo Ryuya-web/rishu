@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
     def index
-        @lessons=Lesson.all.order("created_at DESC") 
+        @lessons=Lesson.page(params[:page]).per(8).order("created_at DESC") 
         @all_ranks = Lesson.find(Like.group(:lesson_id).order('count(lesson_id) desc').limit(50).distinct.pluck(:lesson_id))
     end
     def new
@@ -15,7 +15,7 @@ class LessonsController < ApplicationController
       redirect_to lessons_path
     else 
       @lessons = Lesson.all
-      render'index'
+      render'new'
     end
     end
     def search

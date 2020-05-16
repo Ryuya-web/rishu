@@ -3,6 +3,9 @@ class Lesson < ApplicationRecord
     
     has_many :likes
     has_many :liked_users, through: :likes, source: :user
+    validates :title,presence: true
+    validates :body,presence: true
+    validates :teacher_name,presence: true
     def self.search(search)
         if search
            Lesson.where(['title LIKE ?', "%#{search}%"])
