@@ -1,0 +1,38 @@
+<div class="col-xs-8  col-md-offset-2">
+<div class="topic">
+<h1> Meiji</h1>
+<p>明治大学授業評価掲示板</p>
+</div>
+<div class="ribbon5">
+ <h3><%= link_to "授業に関する評価や感想を投稿する", new_lesson_path%></h3>
+</div>
+<p></p>
+<div class="ribon">
+<div class="ribbon9">
+<h3>新着授業評価情報</h3>
+</div>
+</div>
+    <% @lessons.each do |lesson|%>
+    <div class="box10">
+    <p><%=lesson.created_at.to_s(:datetime_jp)%></p>
+    <p>教授名</p><p><%= link_to lesson.teacher_name,lesson_path(lesson.id)%></p>
+    <p>授業名</p>
+    <p><%= link_to lesson.title, lesson_path(lesson.id)%></p>
+    <p>授業内容</p>
+    <p><%=lesson.body%></p>
+    </div>
+    <%end%>
+
+</div>
+
+<div class="col-xs-2">
+<div class="box25">
+<h3>Ranking  <i class="fas fa-crown"></i></h3>
+<% @all_ranks.each.with_index(1) do |rank, i|%>
+<p>第<%=i%>位</p>
+<p><%=rank.title%></p>
+<%end%>
+</div>
+</div>
+
+

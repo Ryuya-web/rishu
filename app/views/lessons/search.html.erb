@@ -1,0 +1,10 @@
+<p>検索</p>
+<%= form_tag(search_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+<% @lessons.each do |lesson|%>
+ <p><%=lesson.created_at.to_s(:datetime_jp)%></p>
+<p><%= link_to lesson.teacher_name%></p>
+<p><%= link_to lesson.title, lesson_path(lesson.id)%></p>
+<%end%>

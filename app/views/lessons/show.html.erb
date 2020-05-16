@@ -1,0 +1,17 @@
+<% @lessons.each do |lesson|%>
+<p><%= lesson.teacher_name%></p>
+<p><%=lesson.title%></p>
+<p><%=lesson.body%></p>
+<p>この授業がおすすめであればいいねしてください</p>
+<% if current_user.already_liked?(@lesson) %>
+  <%= link_to lesson_like_path(@lesson), method: :delete do %>
+  <span class="glyphicon glyphicon-heart"><%= @lesson.likes.count%>
+  <%end%>
+<% else %>
+  <%= link_to lesson_likes_path(@lesson), method: :post do %>
+  <span class="glyphicon glyphicon-heart-empty"><%= @lesson.likes.count %></span>
+  <% end %>
+<%end%>
+<p>-----------------------</p>
+
+<%end%>

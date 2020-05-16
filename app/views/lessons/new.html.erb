@@ -1,0 +1,17 @@
+<%= form_for @lesson do |f| %>
+       
+        <%= f.label :name, "担当の教授" %>
+        <%= f.text_field :teacher_name %>
+
+    <div>
+    <h4>タイトル</h4>
+    <%= f.text_field :title %>
+    </div>
+    <div >
+    <h4>コメント</h4>
+    <%= f.text_area :body %>
+    </div>
+    <div>
+    <br><%= f.submit "投稿する", class:"btn btn-primary btn-block " %>
+    </div>
+<% end %>

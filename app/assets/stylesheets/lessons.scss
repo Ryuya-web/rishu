@@ -1,0 +1,194 @@
+// Place all the styles related to the Lessons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.box10 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: black;
+    background: #e4fcff;/*背景色*/
+    border-top: solid 2px #1dc1d6;
+    border-bottom: solid 2px #1dc1d6;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+}
+.box10 p {
+    margin: 0; 
+    padding: 0;
+}
+h1{
+    font-family: 'Tangerine', cursive;
+    font-size:80px;
+    text-align:center;
+ }
+.topic p{
+    text-align:center;
+    font-family: "M PLUS Rounded 1c";
+    font-size:30px;
+}
+.ribbon5 {
+    margin-top:20px;
+    display: inline-block;
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    padding: 7px 0;
+    font-size: 18px;/*文字サイズ*/
+    background: #CCFFCC;/*背景色*/
+    color: #FFF;/*文字色*/
+    box-sizing: border-box;
+  }
+  .ribbon5 h3 {
+    margin: 0;
+    padding: 0 30px 0 15px;
+    border-top: dashed 1px black;
+    border-bottom: dashed 1px black;
+    line-height: 46px;
+  }
+  
+  .ribbon5:after {
+    position: absolute;
+    content: '';
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 0px;
+    height: 0px;
+    border-width: 30px 15px 30px 0px;
+    border-color: transparent #fff transparent transparent;
+    border-style: solid;
+  }
+  .ribbon9 {
+    display: inline-block;
+    position: relative;
+    height: 45px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .ribbon9:before {/*左側のリボン端*/
+    content: '';
+    position: absolute;
+    width: 10px;
+    bottom: -10px;
+    left: -35px;
+    z-index: -2;
+    border: 20px solid #56adf3;
+    border-left-color: transparent;/*山形に切り抜き*/
+  }
+  
+  .ribbon9:after {/*右側のリボン端*/
+    content: '';
+    position: absolute;
+    width: 10px;
+    bottom: -10px;
+    right: -35px;
+    z-index: -2;
+    border: 20px solid #56adf3;
+    border-right-color: transparent;/*山形に切り抜き*/
+  }
+  .ribon{
+      margin-left:250px;
+      margin-top:50px;
+  }
+  .ribbon9 h3 {
+    display: inline-block;
+    margin-left:50px;
+    font-family: "M PLUS Rounded 1c";
+    position: relative;
+    margin: 0;
+    padding: 0 20px;
+    line-height: 45px;
+    font-size: 25px;
+    color: #FFF;
+    background: #2196F3;/*真ん中の背景色*/
+  }
+  .ribbon9 h3:before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid 10px transparent;
+    border-right: solid 15px #397eb5;/*左の折り返し部分*/
+  }
+  .ribbon9 h3:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    right: 0;
+    border: none;
+    border-bottom: solid 10px transparent;
+    border-left: solid 15px #397eb5;/*右の折り返し部分*/
+  }
+  .box25{
+    position: relative;
+    background: #fff0cd;
+    box-shadow: 0px 0px 0px 5px #fff0cd;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    color: #454545;
+}
+.box25:after{
+    position: absolute;
+    content: '';
+    right: -7px;
+    top: -7px;
+    border-width: 0 15px 15px 0;
+    border-style: solid;
+    border-color: #ffdb88 #fff #ffdb88;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+.box25 p {
+    margin: 0; 
+    padding: 0;
+}
+.ribbon19-wrapper {
+  display: block;
+  position: relative;
+  margin: 15px auto;
+  padding: 10px 0;
+  width: 300px;
+  height: 150px;
+  background: #f1f1f1;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14);
+  box-sizing: border-box;
+}
+
+.ribbon19-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85px;
+  height: 85px;
+  overflow: hidden;
+  }
+
+.ribbon19 {
+  display: inline-block;
+  position: absolute;
+  padding: 5px 0;
+  left: -24px;
+  top: 20px;
+  width: 160px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 16px;
+  background: #39c3d4;
+  color: #fff;
+  letter-spacing: 0.05em;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 2px rgb(57, 195, 212);
+  border-top: dashed 1px rgba(255, 255, 255, 0.65);
+  border-bottom: dashed 1px rgba(255, 255, 255, 0.65);
+}
+.box14{
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+}
+.box14 h3 {
+  margin: 0; 
+  padding: 0;
+}
