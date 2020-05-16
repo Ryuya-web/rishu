@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
     def index
         @lessons=Lesson.all.order("created_at DESC") 
-        @all_ranks = Lesson.find(Like.group(:lesson_id).order('count(lesson_id) desc').limit(10).distinct.pluck(:lesson_id))
+        @all_ranks = Lesson.find(Like.group(:lesson_id).order('count(lesson_id) desc').limit(50).distinct.pluck(:lesson_id))
     end
     def new
         @lesson=Lesson.new
@@ -21,6 +21,7 @@ class LessonsController < ApplicationController
     def search
         @lessons = Lesson.search(params[:search])
         @teachers = Teacher.where(id:@lessons.pluck(:teacher_id))
+        @all_ranks = Lesson.find(Like.group(:lesson_id).order('count(lesson_id) desc').limit(50).distinct.pluck(:lesson_id))
     end
     def show
         @lesson = Lesson.find params[:id]

@@ -1,17 +1,15 @@
+<div class="col-xs-7 col-xs-offset-3">
 <%= form_for @lesson do |f| %>
-       
-        <%= f.label :name, "担当の教授" %>
-        <%= f.text_field :teacher_name %>
-
-    <div>
-    <h4>タイトル</h4>
+    <div class="box10">
+    <h4>担当の教授</h4>
+    <%= f.text_field :teacher_name %>
+    <h4>授業名</h4>
     <%= f.text_field :title %>
+    <h4>授業に対する評価</h4>
+    <div class="box14">
+    <span><%= f.text_area :body, size: "82x20"%><span>
     </div>
-    <div >
-    <h4>コメント</h4>
-    <%= f.text_area :body %>
-    </div>
-    <div>
     <br><%= f.submit "投稿する", class:"btn btn-primary btn-block " %>
     </div>
 <% end %>
+</div>
