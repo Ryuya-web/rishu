@@ -300,3 +300,23 @@ span {
 .heart{
   padding-left:230px;
 }
+li:not(:first-child){
+  display:none;
+  }
+  .container-fluid{
+    margin-top:120px;
+    background-image:url(b002.gif ); 
+ }
+ .vsc-initialized{
+  margin-top:60px;
+}
+body{
+   margin-top:120px;
+}
+h1{
+  font-family: 'Tangerine', cursive;
+  font-size:80px;
+}
+.nav navbar-nav navbar-left{
+  margin-right:50px;
+}

@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "lessons/lessons", :media => "all" %>
+<%= stylesheet_link_tag "application", :media => "all" %>
 <div class="col-xs-7 col-xs-offset-3">
 <%= form_for @lesson do |f| %>
     <div class="box10">
@@ -11,5 +13,8 @@
     </div>
     <br><%= f.submit "投稿する", class:"btn btn-primary btn-block " %>
     </div>
+<% end %>
+<%= link_to :back do %>
+  <button>戻る</button>
 <% end %>
 </div>

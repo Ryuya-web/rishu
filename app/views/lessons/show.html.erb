@@ -1,4 +1,5 @@
-
+<%= stylesheet_link_tag "lessons/lessons", :media => "all" %>
+<%= stylesheet_link_tag "application", :media => "all" %>
 <div class="col-xs-3">
 <ul class="note">
 <li><a>情報コミュニケーション学部</a></li>
@@ -33,6 +34,7 @@
     </div>
     <div class="favorite">
     <p>この授業がおすすめであればいいねしてください</p>
+
     <div class="heart">
     <% if current_user.already_liked?(@lesson) %>
      <%= link_to lesson_like_path(@lesson), method: :delete do %>
@@ -47,6 +49,9 @@
     </div>
     </div>
     <%end%>
+    <%= link_to :back do %>
+        <button>戻る</button>
+    <% end %>
 
 </div>
 

@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+    before_action :authenticate_user!
     def index
         @lessons=Lesson.page(params[:page]).per(8).order("created_at DESC") 
         @all_ranks = Lesson.find(Like.group(:lesson_id).order('count(lesson_id) desc').limit(50).distinct.pluck(:lesson_id))
@@ -29,8 +30,7 @@ class LessonsController < ApplicationController
     def show
         @lesson = Lesson.find params[:id]
         @like = Like.new
-        @lessons = Lesson.where(title:@lesson.title)
-        @teachers = Lesson.where(teacher_id:@lessons.pluck(:teacher_id))
+        @lessons = Lesson.where(title:@lesson.title).order("created_at ASC") 
         @all_ranks = Lesson.find(Like.group(:lesson_id).order('count(lesson_id) desc').limit(50).distinct.pluck(:lesson_id))
     end
     private

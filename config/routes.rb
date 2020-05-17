@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  root 'homes#top' 
+  root 'homes#top'
+  devise_for :users
   get 'homes/index' => 'homes#index'
   get '/lessons/search',to: 'lessons#search',as:'search' 
   get '/lessons/searches',to: 'lessons#searches',as:'searches' 
-  devise_for :users
+  
   resources :lessons, only: [:new, :create, :index, :show] do
     resources :likes, only: [:create, :destroy]
   end
