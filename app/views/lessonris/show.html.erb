@@ -1,0 +1,68 @@
+<%= stylesheet_link_tag "lessons/lessons", :media => "all" %>
+<%= stylesheet_link_tag "application", :media => "all" %>
+<div class="col-md-3 col-xs-12">
+<ul class="note">
+<li><a>情報コミュニケーション学部</a></li>
+</ul>
+</div>
+<div class="col-md-7 col-xs-12">
+<div class="topic">
+<h1> Meify</h1>
+<p>明治大学授業評価掲示板</p>
+</div>
+<div class="ribbon5">
+ <h3><%= link_to "授業に関する評価や感想を投稿する", new_lesson_path%></h3>
+</div>
+<p></p>
+<div class="ribon">
+<div class="ribbon9">
+<h3>新着授業評価情報</h3>
+</div>
+</div>
+    <% @lessons.each do |lesson|%>
+    <div class="box10">
+    <p><%=lesson.created_at.to_s(:datetime_jp)%></p>
+    <h4>教授名</h4>
+    <p class="t"><%= link_to lesson.teacher_name,lesson_path(lesson.id)%></p>
+    <p>-----------------------------------------------------------------------------------------------------</p>
+    <h4>授業名</h4>
+    <p class="t"><%= link_to lesson.title, lesson_path(lesson.id)%></p>
+    <p>-----------------------------------------------------------------------------------------------------</p>
+    <h4>授業評価</h4>
+    <div class="box14">
+    <span><%=lesson.body%></span>
+    </div>
+    <div class="row">
+    <div class="favorite">
+    <p>この授業がおすすめであれば<br><span class="red">一番上の投稿に</span>いいねしてください</p>
+
+    <div class="heart">
+    <% if current_user.already_liked?(lesson) %>
+     <%= link_to lesson_like_path(lesson), method: :delete do %>
+        <span class="glyphicon glyphicon-heart"><%= lesson.likes.count%></span>
+    <%end%>
+    <% else %>
+    <%= link_to lesson_likes_path(lesson), method: :post do %>
+    <span class="glyphicon glyphicon-heart-empty"><%= lesson.likes.count %></span>
+    <% end %>
+    <%end%>
+    </div>
+    </div>
+    </div>
+    </div>
+    <%end%>
+    <%= link_to :back do %>
+        <button>戻る</button>
+    <% end %>
+
+</div>
+
+<div class="col-md-2 col-xs-12">
+<div class="box25">
+<h3>Ranking  <i class="fas fa-crown"></i></h3>
+<% @all_ranks.each.with_index(1) do |rank, i|%>
+<p>第<%=i%>位</p>
+<p><%= link_to rank.title, lesson_path(rank.id)%></p>
+<%end%>
+</div>
+</div>

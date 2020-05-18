@@ -1,0 +1,2 @@
+module LikerisHelper
+end

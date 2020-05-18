@@ -10,7 +10,70 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_16_055053) do
+ActiveRecord::Schema.define(version: 2020_05_18_134808) do
+
+  create_table "lessonbs", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.string "teacher_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessonhs", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.string "teacher_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessonkes", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.string "teacher_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessonkos", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.string "teacher_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessonkyos", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.string "teacher_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessonnos", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.string "teacher_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessonris", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.string "teacher_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lessons", force: :cascade do |t|
     t.string "title"
@@ -21,6 +84,105 @@ ActiveRecord::Schema.define(version: 2020_05_16_055053) do
     t.string "teacher_name"
   end
 
+  create_table "lessonses", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.string "teacher_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessonsies", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.string "teacher_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessonsos", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.string "teacher_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessonsyos", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.string "teacher_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "likebs", force: :cascade do |t|
+    t.integer "lessonb_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessonb_id"], name: "index_likebs_on_lessonb_id"
+    t.index ["user_id"], name: "index_likebs_on_user_id"
+  end
+
+  create_table "likehs", force: :cascade do |t|
+    t.integer "lessonh_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessonh_id"], name: "index_likehs_on_lessonh_id"
+    t.index ["user_id"], name: "index_likehs_on_user_id"
+  end
+
+  create_table "likekes", force: :cascade do |t|
+    t.integer "lessonke_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessonke_id"], name: "index_likekes_on_lessonke_id"
+    t.index ["user_id"], name: "index_likekes_on_user_id"
+  end
+
+  create_table "likekos", force: :cascade do |t|
+    t.integer "lessonko_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessonko_id"], name: "index_likekos_on_lessonko_id"
+    t.index ["user_id"], name: "index_likekos_on_user_id"
+  end
+
+  create_table "likekyos", force: :cascade do |t|
+    t.integer "lessonkyo_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessonkyo_id"], name: "index_likekyos_on_lessonkyo_id"
+    t.index ["user_id"], name: "index_likekyos_on_user_id"
+  end
+
+  create_table "likenos", force: :cascade do |t|
+    t.integer "lessonno_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessonno_id"], name: "index_likenos_on_lessonno_id"
+    t.index ["user_id"], name: "index_likenos_on_user_id"
+  end
+
+  create_table "likeris", force: :cascade do |t|
+    t.integer "lessonri_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessonri_id"], name: "index_likeris_on_lessonri_id"
+    t.index ["user_id"], name: "index_likeris_on_user_id"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.integer "lesson_id"
     t.integer "user_id"
@@ -28,6 +190,42 @@ ActiveRecord::Schema.define(version: 2020_05_16_055053) do
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_likes_on_lesson_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "likeses", force: :cascade do |t|
+    t.integer "lessonse_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessonse_id"], name: "index_likeses_on_lessonse_id"
+    t.index ["user_id"], name: "index_likeses_on_user_id"
+  end
+
+  create_table "likesies", force: :cascade do |t|
+    t.integer "lessonsy_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessonsy_id"], name: "index_likesies_on_lessonsy_id"
+    t.index ["user_id"], name: "index_likesies_on_user_id"
+  end
+
+  create_table "likesos", force: :cascade do |t|
+    t.integer "lessonso_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessonso_id"], name: "index_likesos_on_lessonso_id"
+    t.index ["user_id"], name: "index_likesos_on_user_id"
+  end
+
+  create_table "likesyos", force: :cascade do |t|
+    t.integer "lessonsyo_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessonsyo_id"], name: "index_likesyos_on_lessonsyo_id"
+    t.index ["user_id"], name: "index_likesyos_on_user_id"
   end
 
   create_table "teachers", force: :cascade do |t|

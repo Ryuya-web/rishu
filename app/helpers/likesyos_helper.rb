@@ -1,0 +1,2 @@
+module LikesyosHelper
+end

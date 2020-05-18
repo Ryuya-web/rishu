@@ -1,0 +1,58 @@
+<%= stylesheet_link_tag "lessons/lessons", :media => "all" %>
+<%= stylesheet_link_tag "application", :media => "all" %>
+<div class="col-md-3 col-xs-12">
+<ul class="note">
+<li><a>情報コミュニケーション学部</a></li>
+</ul>
+</div>
+<div class="col-md-7 col-xs-12">
+<div class="topic">
+<h1> Meify</h1>
+<p>明治大学授業評価掲示板</p>
+</div>
+<div class="ribbon5">
+ <h3><%= link_to "授業に関する評価や感想を投稿する", new_lessonb_path%></h3>
+</div>
+<div class="search">
+<h3>教授名検索</h3>
+<%= form_tag(searchesb_path,:method => 'get') do %>
+  <%= text_field_tag :search%>
+  <%= submit_tag '検索', :name => nil %>
+<% end %>
+</div>
+<div class="ribon">
+<div class="ribbon9">
+
+<h3>新着授業評価情報</h3>
+</div>
+</div>
+    <% @lessonbs.each do |lessonb|%>
+    <div class="box10">
+    <p><%=lessonb.created_at.to_s(:datetime_jp)%></p>
+    <h4>教授名</h4>
+    <p class="t"><%= link_to lessonb.teacher_name,lessonb_path(lessonb.id)%></p>
+    <p>-----------------------------------------------------------------------------------------------------</p>
+    <h4>授業名</h4>
+    <p class="t"><%= link_to lessonb.title, lessonb_path(lessonb.id)%></p>
+    <p>-----------------------------------------------------------------------------------------------------</p>
+    <h4>授業評価</h4>
+    <div class="box14">
+    <span><%=lessonb.body%></span>
+    </div>
+    </div>
+    <%end%>
+  <%= link_to :back do %>
+  <button>戻る</button>
+  <% end %>
+</div>
+
+<div class="col-md-2 col-xs-12">
+<div class="box25">
+<h3>Ranking  <i class="fas fa-crown"></i></h3>
+<% @all_ranks.each.with_index(1) do |rank, i|%>
+<p>第<%=i%>位</p>
+<p><%= link_to rank.title, lessonb_path(rank.id)%>  <%= rank.likebs.count%>いいね</p>
+
+<%end%>
+</div>
+</div>
