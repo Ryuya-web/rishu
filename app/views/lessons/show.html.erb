@@ -1,11 +1,11 @@
 <%= stylesheet_link_tag "lessons/lessons", :media => "all" %>
 <%= stylesheet_link_tag "application", :media => "all" %>
-<div class="col-xs-3">
+<div class="col-md-3 col-xs-12">
 <ul class="note">
 <li><a>情報コミュニケーション学部</a></li>
 </ul>
 </div>
-<div class="col-xs-7">
+<div class="col-md-7 col-xs-12">
 <div class="topic">
 <h1> Meify</h1>
 <p>明治大学授業評価掲示板</p>
@@ -32,19 +32,21 @@
     <div class="box14">
     <span><%=lesson.body%></span>
     </div>
+    <div class="row">
     <div class="favorite">
-    <p>この授業がおすすめであればいいねしてください</p>
+    <p>この授業がおすすめであれば<br><span class="red">一番上の投稿に</span>いいねしてください</p>
 
     <div class="heart">
-    <% if current_user.already_liked?(@lesson) %>
-     <%= link_to lesson_like_path(@lesson), method: :delete do %>
-        <span class="glyphicon glyphicon-heart"><%= @lesson.likes.count%></span>
+    <% if current_user.already_liked?(lesson) %>
+     <%= link_to lesson_like_path(lesson), method: :delete do %>
+        <span class="glyphicon glyphicon-heart"><%= lesson.likes.count%></span>
     <%end%>
     <% else %>
-    <%= link_to lesson_likes_path(@lesson), method: :post do %>
-    <span class="glyphicon glyphicon-heart-empty"><%= @lesson.likes.count %></span>
+    <%= link_to lesson_likes_path(lesson), method: :post do %>
+    <span class="glyphicon glyphicon-heart-empty"><%= lesson.likes.count %></span>
     <% end %>
     <%end%>
+    </div>
     </div>
     </div>
     </div>
@@ -55,7 +57,7 @@
 
 </div>
 
-<div class="col-xs-2">
+<div class="col-md-2 col-xs-12">
 <div class="box25">
 <h3>Ranking  <i class="fas fa-crown"></i></h3>
 <% @all_ranks.each.with_index(1) do |rank, i|%>
