@@ -2,7 +2,7 @@ class LessonnosController < ApplicationController
     before_action :authenticate_user!
     def index
         @lessonnos=Lessonno.page(params[:page]).per(8).order("created_at DESC") 
-        @all_ranks = Lessonno.find(Like.group(:lessonno_id).order('count(lessonno_id) desc').limit(50).distinct.pluck(:lessonno_id))
+        @all_ranks = Lessonno.find(Likeno.group(:lessonno_id).order('count(lessonno_id) desc').limit(50).distinct.pluck(:lessonno_id))
     end
     def new
         @lessonno=Lessonno.new
@@ -21,17 +21,17 @@ class LessonnosController < ApplicationController
     end
     def search
         @lessonnos = Lessonno.search(params[:search])
-        @all_ranks = Lessonno.find(Like.group(:lessonno_id).order('count(lessonno_id) desc').limit(50).distinct.pluck(:lessonno_id))
+        @all_ranks = Lessonno.find(Likeno.group(:lessonno_id).order('count(lessonno_id) desc').limit(50).distinct.pluck(:lessonno_id))
     end
     def searches
         @lessonnos = Lessonno.searches(params[:search])
-        @all_ranks = Lessonno.find(Like.group(:lessonno_id).order('count(lessonno_id) desc').limit(50).distinct.pluck(:lessonno_id))
+        @all_ranks = Lessonno.find(Likeno.group(:lessonno_id).order('count(lessonno_id) desc').limit(50).distinct.pluck(:lessonno_id))
     end
     def show
         @lessonno = Lessonno.find params[:id]
-        @like = Like.new
+        @like = Likeno.new
         @lessonnos = Lessonno.where(title:@lessonno.title,teacher_name:@lessonno.teacher_name).order("created_at ASC") 
-        @all_ranks = Lessonno.find(Like.group(:lessonno_id).order('count(lessonno_id) desc').limit(50).distinct.pluck(:lessonno_id))
+        @all_ranks = Lessonno.find(Likeno.group(:lessonno_id).order('count(lessonno_id) desc').limit(50).distinct.pluck(:lessonno_id))
     end
     def ranking
         

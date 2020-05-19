@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "lessonnos/lessonnos", :media => "all" %>
+<%= stylesheet_link_tag "lessons/lessons", :media => "all" %>
 <%= stylesheet_link_tag "application", :media => "all" %>
 <div class="col-md-3 col-xs-12" >
 <ul class="note">
@@ -46,7 +46,7 @@
 <h3>Ranking  <i class="fas fa-crown"></i></h3>
 <% @all_ranks.each.with_index(1) do |rank, i|%>
 <p>第<%=i%>位</p>
-<p><%= link_to rank.title, lessonno_path(rank.id)%> <%= rank.likes.count%>いいね</p>
+<p><%= link_to rank.title, lessonno_path(rank.id)%> <%= rank.likenos.count%>いいね</p>
 <%end%>
 </div>
 </div>

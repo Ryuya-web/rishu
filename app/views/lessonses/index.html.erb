@@ -11,7 +11,7 @@
 <p>明治大学授業評価掲示板</p>
 </div>
 <div class="ribbon5">
- <h3><%= link_to "授業に関する評価や感想を投稿する", new_lesson_path%></h3>
+ <h3><%= link_to "授業に関する評価や感想を投稿する", new_lessonse_path%></h3>
 </div>
 <p></p>
 <div class="ribon">
@@ -19,22 +19,22 @@
 <h3>新着授業評価情報</h3>
 </div>
 </div>
-    <% @lessons.each do |lesson|%>
+    <% @lessonses.each do |lessonse|%>
     <div class="box10">
-    <p><%=lesson.created_at.to_s(:datetime_jp)%></p>
+    <p><%=lessonse.created_at.to_s(:datetime_jp)%></p>
     <h4>教授名</h4>
-    <p class="t"><%= link_to lesson.teacher_name,lesson_path(lesson.id)%></p>
+    <p class="t"><%= link_to lessonse.teacher_name,lessonse_path(lessonse.id)%></p>
     <p>-----------------------------------------------------------------------------------------------------</p>
     <h4>授業名</h4>
-    <p class="t"><%= link_to lesson.title, lesson_path(lesson.id)%></p>
+    <p class="t"><%= link_to lessonse.title, lessonse_path(lessonse.id)%></p>
     <p>-----------------------------------------------------------------------------------------------------</p>
     <h4>授業評価</h4>
     <div class="box14">
-    <span><%=lesson.body%></span>
+    <span><%=lessonse.body%></span>
     </div>
     </div>
     <%end%>
-    <%= paginate @lessons %>
+    <%= paginate @lessonses %>
     <%= link_to :back do %>
         <button>戻る</button>
     <% end %>
@@ -45,7 +45,7 @@
 <h3>Ranking  <i class="fas fa-crown"></i></h3>
 <% @all_ranks.each.with_index(1) do |rank, i|%>
 <p>第<%=i%>位</p>
-<p><%= link_to rank.title, lesson_path(rank.id)%> <%= rank.likes.count%>いいね</p>
+<p><%= link_to rank.title, lessonse_path(rank.id)%> <%= rank.likeses.count%>いいね</p>
 <%end%>
 </div>
 </div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rishu</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+   <header class="navbar navbar-fixed-top"  style="background-color:#CEF9DC;">
+  <div id="slidemenu">
+  <nav class='nav navbar-nav navbar-left' >
+      <span></span>
+  </nav>
+
+  <nav>
+  <ul class="nav navbar-nav navbar-right">   
+    <% if user_signed_in? %>
+        <li><%= link_to 'Home', lessonses_path, class: 'glyphicon glyphicon-home home' %></li>
+        <li><%= link_to '教授検索', searchesse_path, class: 'glyphicon glyphicon-user users' %></li>
+        <li><%= link_to '授業検索', searchse_path, class: 'glyphicon glyphicon-search search' %></li>
+        <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
+    <% else %>
+        <li><%= link_to 'home', root_path, class: 'glyphicon glyphicon-home home' %></li>
+        <li><%= link_to 'sign up', new_user_registration_path, class: 'glyphicon glyphicon-edit sign_up' %></li>
+        <li><%= link_to 'login', new_user_session_path, class: 'glyphicon glyphicon-log-in sign_in' %></li>
+    <% end %>
+  </ul>
+  </nav>
+</div>
+</header>
+<main>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
+</main>
+  </body>
+</html>
