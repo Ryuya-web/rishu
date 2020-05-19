@@ -1,3 +1,19 @@
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
-<td> <%= link_to "情報コミュニケーション学部", lessons_path%></td>
+<%= stylesheet_link_tag "application", :media => "all" %>
+<%= stylesheet_link_tag "homes/homes", :media => "all" %>
+<div class="row">
+<div class="col-md-5 col-md-offset-1 col-xs-6 col-xs-offset-3">
+<%= link_to "法学部",lessonhs_path, class:"btn-gradient-3d-simple"%>
+<%= link_to "商学部",lessonsyos_path, class:"btn-gradient-3d-simple"%>
+<%= link_to "政治経済学部",lessonses_path, class:"btn-gradient-3d-simple"%>
+<%= link_to "経営学部",lessonkes_path, class:"btn-gradient-3d-simple"%>
+<%= link_to "文学部",lessonbs_path, class:"btn-gradient-3d-simple"%>
+<%= link_to "情報コミュニケーション学部",lessons_path, class:"btn-gradient-3d-simple"%>
+</div>
+<div class="col-md-5 col-md-offset-1  col-xs-6 col-xs-offset-3">
+<%= link_to "国際日本学部",lessonkos_path, class:"btn-gradient-3d-simple"%>
+<%= link_to "理工学部",lessonris_path, class:"btn-gradient-3d-simple"%>
+<%= link_to "農学部",lessonnos_path, class:"btn-gradient-3d-simple"%>
+<%= link_to "総合数理学部",lessonsos_path, class:"btn-gradient-3d-simple"%>
+<%= link_to "全学部共通科目",lessonkyos_path, class:"btn-gradient-3d-simple"%>
+</div>
+</div>
