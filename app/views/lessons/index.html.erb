@@ -1,3 +1,4 @@
+<div class="row">
 <%= stylesheet_link_tag "lessons/lessons", :media => "all" %>
 <%= stylesheet_link_tag "application", :media => "all" %>
 <div class="col-md-3 col-xs-12" >
@@ -15,7 +16,7 @@
 <li><%= link_to "全学部共通科目",lessonkyos_path%></li>
 </ul>
 </div>
-<div class="col-md-7 col-xs-12" >
+<div class="col-md-7 col-xs-12 order-xs-3" >
 <div class="topic">
 <h1> Meify</h1>
 <p>明治大学授業評価掲示板</p>
@@ -57,6 +58,7 @@
 <p>第<%=i%>位</p>
 <p><%= link_to rank.title, lesson_path(rank.id)%> <%= rank.likes.count%>いいね</p>
 <%end%>
+</div>
 </div>
 </div>
 

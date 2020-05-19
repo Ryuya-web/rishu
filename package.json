@@ -2,6 +2,7 @@
   "name": "rishu",
   "private": true,
   "dependencies": {
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "rfs": "^9.0.3"
   }
 }

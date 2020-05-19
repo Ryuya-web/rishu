@@ -12,11 +12,12 @@
 
  *= require_self
  */
+ @import "../node_modules/rfs/scss";
  @import "bootstrap-sprockets";  /*ここを追加*/
  @import "bootstrap";            /*ここを追加*/
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
-
+ 
  .vsc-initialized{
     margin-top:60px;
  }
@@ -33,4 +34,41 @@
  }
  .container-fluid{
    background-image: url('b002.gif')
-}
+ }
+ @media (max-width: 1200px) { 
+    li{
+      font-size:30px;
+    }
+    h1{
+       font-size:130px;
+    }
+    h3{
+       font-size:35px;
+    }
+    .ribon h3{
+       font-size:41px;
+    }
+    .topic p{
+       font-size:50px
+    }
+    .box10 a{
+       font-size:41px;
+    }
+    .box10 span{
+       font-size:40px;
+    }
+    .box10 h4{
+       font-size:25px;
+    }
+    .pagination a{
+       font-size:40px;
+       margin-left:30px;
+    }
+    span{
+       font-size:40px;
+    }
+    .box25 p{
+       font-size:30px;
+    }
+    
+ }
