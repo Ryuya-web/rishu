@@ -30,7 +30,7 @@ class LessonsController < ApplicationController
     def show
         @lesson = Lesson.find params[:id]
         @like = Like.new
-        @lessons = Lesson.where(title:@lesson.title).order("created_at ASC") 
+        @lessons = Lesson.where(title:@lesson.title,teacher_name:@lesson.teacher_name).order("created_at ASC") 
         @all_ranks = Lesson.find(Like.group(:lesson_id).order('count(lesson_id) desc').limit(50).distinct.pluck(:lesson_id))
     end
     def ranking

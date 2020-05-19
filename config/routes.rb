@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
-  get '/lessonhs/search',to: 'lessohns#search',as:'searchh' 
+  get '/lessonhs/search',to: 'lessonhs#search',as:'searchh' 
   get '/lessonhs/searches',to: 'lessonhs#searches',as:'searchesh' 
   
   resources :lessonhs, only: [:new, :create, :index, :show] do
@@ -69,8 +69,8 @@ Rails.application.routes.draw do
   get '/lessonkyos/search',to: 'lessonkyos#search',as:'searchkyo' 
   get '/lessonkyos/searches',to: 'lessonkyos#searches',as:'searcheskyo' 
   
-  resources :lessons, only: [:new, :create, :index, :show] do
-    resources :likes, only: [:create, :destroy]
+  resources :lessonkyos, only: [:new, :create, :index, :show] do
+    resources :likekyos, only: [:create, :destroy]
   end
   get '/lessonbs/search',to: 'lessonbs#search',as:'searchb' 
   get '/lessonbs/searches',to: 'lessonbs#searches',as:'searchesb' 
@@ -78,6 +78,6 @@ Rails.application.routes.draw do
   resources :lessonbs, only: [:new, :create, :index, :show] do
     resources :likebs, only: [:create, :destroy]
   end
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ 
+    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
