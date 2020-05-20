@@ -2,7 +2,7 @@ class LessonkyosController < ApplicationController
     before_action :authenticate_user!
     def index
         @lessonkyos=Lessonkyo.page(params[:page]).per(8).order("created_at DESC") 
-        @all_ranks = Lessonkyo.find(Likekyo.group(:lessonkyo_id).order('count(lessonkyo_id) desc').limit(50).distinct.pluck(:lessonkyo_id))
+        @all_ranks = Lessonkyo.find(Likekyo.group(:lessonkyo_id).order('count(lessonkyo_id) desc').limit(50).pluck(:lessonkyo_id))
     end
     def new
         @lessonkyo=Lessonkyo.new
@@ -21,17 +21,17 @@ class LessonkyosController < ApplicationController
     end
     def search
         @lessonkyos = Lessonkyo.search(params[:search])
-        @all_ranks = Lessonkyo.find(Likekyo.group(:lessonkyo_id).order('count(lessonkyo_id) desc').limit(50).distinct.pluck(:lessonkyo_id))
+        @all_ranks = Lessonkyo.find(Likekyo.group(:lessonkyo_id).order('count(lessonkyo_id) desc').limit(50).pluck(:lessonkyo_id))
     end
     def searches
         @lessonkyos = Lessonkyo.searches(params[:search])
-        @all_ranks = Lessonkyo.find(Likekyo.group(:lessonkyo_id).order('count(lessonkyo_id) desc').limit(50).distinct.pluck(:lessonkyo_id))
+        @all_ranks = Lessonkyo.find(Likekyo.group(:lessonkyo_id).order('count(lessonkyo_id) desc').limit(50).pluck(:lessonkyo_id))
     end
     def show
         @lessonkyo = Lessonkyo.find params[:id]
         @like = Likekyo.new
         @lessonkyos = Lessonkyo.where(title:@lessonkyo.title,teacher_name:@lessonkyo.teacher_name).order("created_at ASC") 
-        @all_ranks = Lessonkyo.find(Likekyo.group(:lessonkyo_id).order('count(lessonkyo_id) desc').limit(50).distinct.pluck(:lessonkyo_id))
+        @all_ranks = Lessonkyo.find(Likekyo.group(:lessonkyo_id).order('count(lessonkyo_id) desc').limit(50).pluck(:lessonkyo_id))
     end
     def ranking
         
