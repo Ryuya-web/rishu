@@ -93,15 +93,6 @@ ActiveRecord::Schema.define(version: 2020_05_18_134808) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "lessonsies", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "user_id"
-    t.string "teacher_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "lessonsos", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -199,15 +190,6 @@ ActiveRecord::Schema.define(version: 2020_05_18_134808) do
     t.datetime "updated_at", null: false
     t.index ["lessonse_id"], name: "index_likeses_on_lessonse_id"
     t.index ["user_id"], name: "index_likeses_on_user_id"
-  end
-
-  create_table "likesies", force: :cascade do |t|
-    t.integer "lessonsy_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["lessonsy_id"], name: "index_likesies_on_lessonsy_id"
-    t.index ["user_id"], name: "index_likesies_on_user_id"
   end
 
   create_table "likesos", force: :cascade do |t|
