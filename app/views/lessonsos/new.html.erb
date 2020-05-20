@@ -2,6 +2,7 @@
 <%= stylesheet_link_tag "application", :media => "all" %>
 <div class="col-md-7 col-md-offset-3 col-xs-12">
 <%= form_for @lessonso do |f| %>
+  <div class="opinion">
     <div class="box10">
     <h4>担当の教授</h4>
     <%= f.text_field :teacher_name %>
@@ -11,6 +12,7 @@
     <span><%= f.text_area :body, size: "82x20"%><span>
     <br><%= f.submit "投稿する", class:"btn btn-primary btn-block " %>
     </div>
+  </div>
 <% end %>
 <%= link_to :back do %>
   <button>戻る</button>
