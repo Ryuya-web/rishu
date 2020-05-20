@@ -23,7 +23,36 @@
  body{
      margin-top:120px;
  }
+ .btn-gradient-simple {
+   display: inline-block;
+   padding: 0.5em 2em;
+   text-decoration: none;
+   border-radius: 3px;
+   font-weight: bold;
+   color: #FFF;
+   background-image: linear-gradient(45deg, #709dff 0%, #b0c9ff 100%);
+   transition: .4s;
+   text-align:center;
+ }
  
+ .btn-gradient-simple:hover {
+   background-image: linear-gradient(45deg, #709dff 50%, #b0c9ff 100%);
+ }
+ .btn-gradient-simple2 {
+   display: inline-block;
+   padding: 0.5em 1em;
+   text-decoration: none;
+   border-radius: 3px;
+   font-weight: bold;
+   color: #FFF;
+   background-image: linear-gradient(45deg, #00FFCC 0%,#CCFFCC	 100%);
+   transition: .4s;
+   text-align:center;
+ }
+ 
+ .btn-gradient-simple2:hover {
+   background-image: linear-gradient(45deg, #33FF99 50%, #99FF99 100%);
+ }
  h1{
     font-family: 'Tangerine', cursive;
     font-size:80px;
