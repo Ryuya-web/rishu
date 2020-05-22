@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,:authentication_keys => [:name]
   has_many :lessons, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_lessons, through: :likes, source: :lesson
@@ -79,5 +79,15 @@ class User < ApplicationRecord
   end
   def already_liked?(lesson)
     self.likes.exists?(lesson_id: lesson.id)
+  end
+  def email_required?
+    false
+  end
+   
+  def email_changed?
+    false
+  end
+  def will_save_change_to_email?
+    false
   end
 end
